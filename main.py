@@ -7,6 +7,7 @@ from pymongo import MongoClient
 
 from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
+from beanie import Document, Indexed, init_beanie
 
 
 def get_connection_string() -> str:
