@@ -1,4 +1,4 @@
-import os,sys
+import os, sys
 import asyncio
 from typing import Optional
 
@@ -19,9 +19,11 @@ def get_connection_string() -> str:
 
     return f'mongodb+srv://{uid}:{pwd}@{template}'
 
+
 def get_mongodb_client() -> MongoClient:
-    #print(f'{get_connection_string()=}')
+    # print(f'{get_connection_string()=}')
     return MongoClient(get_connection_string())
+
 
 def get_python_version() -> str:
     return f"{sys.version_info.major}.{sys.version_info.minor}.{sys.version_info.micro}"
@@ -29,4 +31,3 @@ def get_python_version() -> str:
 
 if __name__ == '__main__':
     print(f"Python version: {get_python_version()}")
-

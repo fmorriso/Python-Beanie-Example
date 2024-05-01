@@ -1,10 +1,12 @@
 # pyton-beanie-example
 
-## Tools used
+## Tools used in original development
 * VSCode 1.88.1
+* PyCharm 2024.1.1
 * Python 3.12.3
 * beanie 1.25.0
 * motor 3.4.0
+* pydantic 2.7.1
 
 ## References
 * [beanie](https://beanie-odm.dev/)
