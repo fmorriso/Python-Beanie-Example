@@ -1,6 +1,14 @@
 # pyton-beanie-example
 
+## Tools used
+* VSCode 1.88.1
+* Python 3.12.3
+* beanie 1.25.0
+* motor 3.4.0
 
+## References
+* [beanie](https://beanie-odm.dev/)
+* [beanie video](https://www.youtube.com/watch?v=vsoawzUmh5A)
 
 ## Getting started
 

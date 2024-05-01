@@ -1,6 +1,12 @@
 import os,sys
+import asyncio
+from typing import Optional
+
 from dotenv import load_dotenv
 from pymongo import MongoClient
+
+from motor.motor_asyncio import AsyncIOMotorClient
+from pydantic import BaseModel
 
 
 def get_connection_string() -> str:
