@@ -9,10 +9,16 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from pydantic import BaseModel
 from beanie import Document, Indexed, init_beanie
 
+from models import Products
+
 
 async def read_products():
     client = get_client()
     print(f'{client=}')
+    db = client['store']
+    print(f'{db.name=}')
+    await init_beanie(database=db, document_models=[Products])
+    print('init_beanie completed')
 
 
 def get_connection_string() -> str:
@@ -26,8 +32,14 @@ def get_connection_string() -> str:
 
 
 def get_client() -> AsyncIOMotorClient:
-    # print(f'{get_connection_string()=}')
     return AsyncIOMotorClient(get_connection_string())
+
+async def init():
+    # Create Motor client
+    client = AsyncIOMotorClient("mongodb://user:pass@host:27017")
+
+    # Init beanie with the Product document class
+    await init_beanie(database=client.db_name, document_models=[Products])
 
 
 def get_python_version() -> str:
@@ -36,5 +48,6 @@ def get_python_version() -> str:
 
 if __name__ == '__main__':
     print(f"Python version: {get_python_version()}")
-
-    asyncio.run(read_products())
+    asyncio.run(init())
+    #display_collections()
+    # asyncio.run(read_products())
