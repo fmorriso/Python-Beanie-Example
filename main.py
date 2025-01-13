@@ -1,15 +1,11 @@
-import os, sys
 import asyncio
-from typing import Optional
+import sys
 
-from dotenv import load_dotenv
-from pymongo import MongoClient
-
+from beanie import init_beanie
 from motor.motor_asyncio import AsyncIOMotorClient
-from pydantic import BaseModel
-from beanie import Document, Indexed, init_beanie
 
 from models import Products
+from program_settings import ProgramSettings
 
 
 async def read_products():
@@ -22,11 +18,11 @@ async def read_products():
 
 
 def get_connection_string() -> str:
-    load_dotenv()
+    
 
-    template: str = os.environ.get('mongodb_connection_template')
-    uid: str = os.environ.get('mongodb_uid')
-    pwd: str = os.environ.get('mongodb_pwd')
+    template: str = ProgramSettings.get_setting('mongodb_connection_template')
+    uid: str = ProgramSettings.get_setting('mongodb_uid')
+    pwd: str = ProgramSettings.get_setting('mongodb_pwd')
 
     return f'mongodb+srv://{uid}:{pwd}@{template}'
 
