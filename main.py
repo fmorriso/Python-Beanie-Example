@@ -18,11 +18,9 @@ async def read_products():
 
 
 def get_connection_string() -> str:
-    
-
-    template: str = ProgramSettings.get_setting('mongodb_connection_template')
-    uid: str = ProgramSettings.get_setting('mongodb_uid')
-    pwd: str = ProgramSettings.get_setting('mongodb_pwd')
+    template: str = ProgramSettings.get_setting('MONGODB_CONNECTION_TEMPLATE')
+    uid: str = ProgramSettings.get_setting('MONGODB_UID')
+    pwd: str = ProgramSettings.get_setting('MONGODB_PWD')
 
     return f'mongodb+srv://{uid}:{pwd}@{template}'
 
@@ -44,6 +42,6 @@ def get_python_version() -> str:
 
 if __name__ == '__main__':
     print(f"Python version: {get_python_version()}")
-    asyncio.run(init())
+    #asyncio.run(init())
     #display_collections()
     # asyncio.run(read_products())
