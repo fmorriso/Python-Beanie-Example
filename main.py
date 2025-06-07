@@ -52,7 +52,9 @@ def get_client() -> AsyncIOMotorClient:
 
 async def init():
     # Create Motor client
-    client = AsyncIOMotorClient("mongodb://user:pass@host:27017")
+    connection_string = get_connection_string()
+    client = AsyncIOMotorClient(connection_string)
+
 
     # Init beanie with the Product document class
     print(f'before init_beanie: {get_current_datetime()}')
