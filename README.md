@@ -1,13 +1,14 @@
 # Python Beanie Example
 
 ## Tools used 
-| Tool     | Version |
-|:---------|--------:|
-| Python   |  3.13.3 |
-| beanie   |  1.29.0 |
-| motor    |   3.7.1 |
-| pydantic |  2.11.5 |
-| VSCode   | 1.100.3 |
+| Tool     |  Version |
+|:---------|---------:|
+| Python   |   3.13.3 |
+| beanie   |   1.29.0 |
+| motor    |    3.7.1 |
+| pydantic |   2.11.5 |
+| PyCharm  | 2025.1.1 |
+| VSCode   |  1.100.3 |
 
 ## Change History
 
